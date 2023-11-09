@@ -7,7 +7,7 @@ const inActiveStyle = {
   textDecoration: "none",
   textTransform: "none",
   disableRipple: "true",
-  color: "#ffff",
+  color: "secondary.light",
   "&:hover": {
     color: "#ff8f9c",
     backgroundColor: "transparent",
@@ -18,14 +18,14 @@ const activeStyle = {
   textDecoration: "none",
   textTransform: "none",
   transition: "0.3s",
-  color: "#ffff",
+  color: "secondary.light",
   "&:hover": {
     backgroundColor: "transparent",
   },
   "&::after": {
     position: "absolute",
     content: '""',
-    backgroundColor: "#ff8f9c",
+    backgroundColor: "primary.main",
     height: "3px",
     width: "100%",
     bottom: "-3px",
@@ -70,6 +70,7 @@ const ButtonNavigation = ({
             <Button
               key={i}
               style={{ textDecoration: "none" }}
+              // sx={{  }}
               sx={i == activeButton ? activeStyle : inActiveStyle}
               // sx={{ }}
             >

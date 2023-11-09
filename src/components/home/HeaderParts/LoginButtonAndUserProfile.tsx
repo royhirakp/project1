@@ -35,7 +35,7 @@ const LoginButtonAndUserProfile = () => {
             sx={{
               disableRipple: "true",
               textDecoration: "none",
-              color: "#ffff",
+              color: "secondary.light",
               "&:hover": {
                 backgroundColor: "transparent",
               },
@@ -53,7 +53,7 @@ const LoginButtonAndUserProfile = () => {
                     xs: "none",
                     md: "block",
                   },
-                  color: "#ffff",
+                  color: "secondary.light",
                 }}
               />
             }
@@ -88,7 +88,7 @@ const LoginButtonAndUserProfile = () => {
             <MenuItem
               onClick={() => {
                 setAnchorEl(null);
-                router.push("/webapp/profile");
+                router.push("/newapp/profile");
               }}
             >
               Profile
@@ -96,7 +96,7 @@ const LoginButtonAndUserProfile = () => {
             <MenuItem
               onClick={() => {
                 setAnchorEl(null);
-                router.push("/webapp/account");
+                router.push("/newapp/account");
               }}
             >
               My account
@@ -110,6 +110,23 @@ const LoginButtonAndUserProfile = () => {
             >
               Logout
             </MenuItem>
+            {/* {[
+              { route: "profile", name: "Profile" },
+              { route: "My account", name: "account" },
+              { route: "Logout", name: "login" },
+            ].map((item, i) => {
+              return (
+                <MenuItem
+                  key={i}
+                  onClick={() => {
+                    setAnchorEl(null);
+                    router.push(`/newapp/${item.route}`);
+                  }}
+                >
+                  {item.name}
+                </MenuItem>
+              );
+            })} */}
           </Menu>
         </Stack>
       </Box>

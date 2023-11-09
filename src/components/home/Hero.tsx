@@ -13,7 +13,8 @@ const Hero = () => {
     <Stack sx={{ width: "100%" }}>
       <Box
         sx={{
-          background: `url('https://lh3.googleusercontent.com/BoNssU4yW1fSjpblBYpAuB917yBmYolbBt6rAoS71E5nZ02XHhnUihBAU2TZolfrx8ijsez4r_8ohTucyt9OBaqy59WxuTvWGcPXCO3vHjzV6xgwBw=w1864-rj')`,
+          background: `url('/bagground.jpg')`,
+          // background: `url('https://lh3.googleusercontent.com/BoNssU4yW1fSjpblBYpAuB917yBmYolbBt6rAoS71E5nZ02XHhnUihBAU2TZolfrx8ijsez4r_8ohTucyt9OBaqy59WxuTvWGcPXCO3vHjzV6xgwBw=w1864-rj')`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
           padding: "300px 0",
@@ -39,7 +40,7 @@ const Hero = () => {
             margin: { xs: "auto 2%", sm: "auto" },
             position: "relative",
             bottom: "110px",
-            background: "#391451;",
+            backgroundColor: "secondary.main",
           }}
         >
           <TextContent />
@@ -112,7 +113,7 @@ const TextContent = () => {
           <Typography
             component="span"
             variant="subtitle1"
-            sx={{ fontWeight: 700, color: "#f56d43" }}
+            sx={{ fontWeight: 700, color: "primary.main" }}
           >
             GPFT
           </Typography>

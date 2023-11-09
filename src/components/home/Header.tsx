@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <Box
       sx={{
-        background: !scroolState ? "#290b3d" : "#391451",
+        backgroundColor: !scroolState ? "secondary.dark" : "secondary.main",
         padding: "10px 0",
       }}
     >
@@ -67,13 +67,13 @@ const Header = () => {
               }}
             >
               <IconButton onClick={toggleDrawer("left", true)}>
-                <MenuIcon />
+                <MenuIcon sx={{ color: "secondary.light" }} />
               </IconButton>
               <Draweerr toggleDrawer={toggleDrawer} state={state} />
             </Box>
             <div
               onClick={() => {
-                router.push("/home");
+                router.push("/newapp/home");
               }}
               style={{
                 cursor: "pointer",

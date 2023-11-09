@@ -19,20 +19,23 @@ const ThemeProvidor: React.FC<ContainerProps> = ({ children }) => {
     palette: {
       mode: darkMode ? "dark" : "light",
       primary: {
-        main: darkMode ? "#6c826f" : "#088d45",
+        main: darkMode ? "#ea7322" : "#ea7322",
         light: !darkMode ? "#e69b9b24" : "#0a1b18f5",
         dark: "#2c365f",
       },
       secondary: {
-        main: darkMode ? "#eaf4e4" : "#13492c",
-        light: darkMode ? "#676464" : "#dcd5d5",
-        dark: darkMode ? "#c8e0f5" : "#f0f8ff",
+        main: "#4a2462", //beguni color
+        // main: "#290b3d", //beguni color
+
+        // dark: "#391451",
+        dark: "#290b3d", // deep begunii// header color change when scrool
+        light: "#ffff", //sada
       },
 
       background: {
-        default: darkMode ? "#0b293a" : "#e6f0fa",
+        default: darkMode ? "#f4f4f4" : "#f4f4f4",
         // #e6f0fa
-        paper: darkMode ? "#2a2828" : "#d9d4d4 ",
+        // paper: darkMode ? "#2a2828" : "#fffff ",
       },
     },
 

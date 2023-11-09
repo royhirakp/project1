@@ -73,18 +73,7 @@ const Draweerr = ({
                 justifyContent: "center",
               }}
             >
-              <Image src="/pngegg.png" alt="logo" width={40} height={40} />
-              <Typography
-                variant="h5"
-                pl={1}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                Buff
-              </Typography>
+              <Image src="/logo3.png" alt="logo" width={40} height={40} />
             </Box>
           </div>
           <IconButton>
@@ -95,20 +84,45 @@ const Draweerr = ({
         <LoginPartForMobileDrawer />
 
         <Divider />
+
         <List>
           {[
-            { name: "Home", icon: <HomeIcon /> },
-            { name: "About", icon: <InfoIcon /> },
-            { name: "Properties", icon: <GradingIcon /> },
-            { name: "Cabs", icon: <LocalTaxiIcon /> },
-            { name: "Holidays", icon: <HolidayVillageIcon /> },
-            { name: "Blog", icon: <BookIcon /> },
+            {
+              name: "Home",
+              icon: <HomeIcon sx={{ color: "primary.main" }} />,
+              path: "home",
+            },
+            {
+              name: "About",
+              icon: <InfoIcon sx={{ color: "primary.main" }} />,
+              path: "about",
+            },
+            {
+              name: "Study Meterial",
+              icon: <GradingIcon sx={{ color: "primary.main" }} />,
+              path: "studyMeterial",
+            },
+            {
+              name: "Courses",
+              icon: <LocalTaxiIcon sx={{ color: "primary.main" }} />,
+              path: "courses",
+            },
+            {
+              name: "Contacts",
+              icon: <HolidayVillageIcon sx={{ color: "primary.main" }} />,
+              path: "contacts",
+            },
+            {
+              name: "Classroom",
+              icon: <BookIcon sx={{ color: "primary.main" }} />,
+              path: "classroom",
+            },
             // "contact",
           ].map((text, index) => (
             <Link
-              href={`/webapp/${text?.name}`}
+              href={`/newapp/${text?.path}`}
               key={index}
-              style={{ textDecoration: "none", backgroundColor: "red" }}
+              style={{ textDecoration: "none" }}
               onClick={() => {
                 setActiveState(index);
               }}
@@ -116,16 +130,25 @@ const Draweerr = ({
               <ListItem
                 disablePadding
                 sx={{
-                  background: `${activeList == index ? "#ffff" : "#faffa"}`,
+                  backgroundColor: `${
+                    activeList == index ? "secondary.main" : "secondary.light"
+                  }`,
                 }}
               >
                 <ListItemButton>
-                  <ListItemIcon>{text?.icon}</ListItemIcon>
+                  <ListItemIcon sx={{ color: "#fffff" }}>
+                    {text?.icon}
+                  </ListItemIcon>
                   <Typography
                     variant="body1"
                     sx={{
-                      color: `${activeList == index ? "#3a3434" : "#3a3434"}`,
-                      fontWeight: 800,
+                      // color: "secondary.main",
+                      color: `${
+                        activeList == index
+                          ? "secondary.light"
+                          : "secondary.main"
+                      }`,
+                      fontWeight: 600,
                     }}
                   >
                     {text?.name}
@@ -138,7 +161,7 @@ const Draweerr = ({
 
         <Divider />
         <Link
-          href={`/webapp/Settings`}
+          href={`/newapp/Settings`}
           style={{ textDecoration: "none", backgroundColor: "red" }}
           onClick={() => {
             // setActiveState(index);
@@ -154,7 +177,7 @@ const Draweerr = ({
           >
             <ListItemButton>
               <ListItemIcon>
-                <SettingsIcon />
+                <SettingsIcon sx={{ color: "primary.main" }} />
               </ListItemIcon>
               <Typography
                 variant="subtitle2"
@@ -173,13 +196,19 @@ const Draweerr = ({
 
         <List>
           {[
-            { name: "help", icon: <HelpCenterIcon /> },
-            { name: "Feedback", icon: <MessageIcon /> },
+            {
+              name: "help",
+              icon: <HelpCenterIcon sx={{ color: "primary.main" }} />,
+            },
+            {
+              name: "Feedback",
+              icon: <MessageIcon sx={{ color: "primary.main" }} />,
+            },
 
             // "contact",
           ].map((text, index) => (
             <Link
-              href={`/webapp/${text?.name}`}
+              href={`/newapp/${text?.name}`}
               key={index}
               style={{ textDecoration: "none", backgroundColor: "red" }}
               onClick={() => {
@@ -236,7 +265,7 @@ const Draweerr = ({
               },
             }}
           >
-            <LogoutIcon />
+            <LogoutIcon sx={{ color: "primary.main" }} />
             <Typography variant="body1" sx={{ paddingLeft: "5px" }}>
               Logout
             </Typography>
@@ -270,44 +299,6 @@ const LoginPartForMobileDrawer = () => {
   const router = useRouter();
   return (
     <Stack>
-      <Box
-        sx={{
-          display: "block",
-          // display: localStorage.getItem("loginStatus") ? "none" : "block",
-        }}
-      >
-        <Link
-          href={`/login`}
-          style={{ textDecoration: "none" }}
-          onClick={() => {
-            // setActiveState(index);
-          }}
-        >
-          <ListItem
-            disablePadding
-            sx={
-              {
-                // background: `${activeList == index ? "#ffff" : "#faffa"}`,
-              }
-            }
-          >
-            <ListItemButton>
-              <ListItemIcon>
-                <AccountBoxIcon fontSize="large" />
-              </ListItemIcon>
-              <Typography
-                variant="body1"
-                sx={{
-                  fontWeight: 800,
-                  color: "#493e3e",
-                }}
-              >
-                Sing In
-              </Typography>
-            </ListItemButton>
-          </ListItem>
-        </Link>
-      </Box>
       {/* xmx */}
 
       <Box
@@ -326,7 +317,7 @@ const LoginPartForMobileDrawer = () => {
         >
           <ListItemButton>
             <Link
-              href={`/webapp/profile`}
+              href={`/newapp/profile`}
               style={{ textDecoration: "none" }}
               onClick={() => {
                 // setActiveState(index);
@@ -348,30 +339,7 @@ const LoginPartForMobileDrawer = () => {
                 <Typography variant="body2" color="secondary">
                   royhirakp@gamil.com
                 </Typography>
-                <Link href="/webapp/profile">Manage your profile</Link>
-              </Stack>
-              <Stack>
-                <Button
-                  variant="contained"
-                  onClick={() => {
-                    router.push("/webapp/bookingPage");
-                  }}
-                  sx={{
-                    margin: "0 20px",
-                    borderRadius: "20px",
-
-                    fontSize: {
-                      xs: "18px",
-                    },
-                    "&:hover": {
-                      background: "##9ae594",
-                      color: "#ffff",
-                      border: "none",
-                    },
-                  }}
-                >
-                  Book Rooms
-                </Button>
+                <Link href="/newapp/profile">Manage your profile</Link>
               </Stack>
             </Stack>
           </ListItemButton>
