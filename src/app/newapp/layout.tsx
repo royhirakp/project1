@@ -34,7 +34,16 @@ export default function RootLayout({
 
           {children}
         </Box>
-        <Footer />
+        <Box
+          sx={{
+            paddingTop: {
+              xs: 4,
+              sm: 8,
+            },
+          }}
+        >
+          <Footer />
+        </Box>
       </ThemeProvidor>
     </>
   );

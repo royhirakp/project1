@@ -54,10 +54,6 @@ const Header = () => {
       <HeaderContainer style={{}}>
         <Stack direction="row" justifyContent="space-between">
           <Stack direction="row">
-            {/* logo and the home route  */}
-
-            {/* drawer for mobile and menu button for mobile  */}
-
             <Box
               sx={{
                 display: {
