@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import { Box, IconButton, Stack } from "@mui/material";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useRouter } from "next/navigation";
@@ -97,10 +97,6 @@ const Header = () => {
             spacing={1}
             sx={{
               alignItems: "center",
-              // display: {
-              //   xs: "none",
-              //   sm: "flex",
-              // },
             }}
           >
             {/* login buttoon */}

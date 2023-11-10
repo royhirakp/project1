@@ -70,9 +70,7 @@ const ButtonNavigation = ({
             <Button
               key={i}
               style={{ textDecoration: "none" }}
-              // sx={{  }}
               sx={i == activeButton ? activeStyle : inActiveStyle}
-              // sx={{ }}
             >
               {item.name}
             </Button>

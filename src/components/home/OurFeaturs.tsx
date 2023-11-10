@@ -30,7 +30,7 @@ const OurFeaturs = () => {
             },
           ].map((item, i) => {
             return (
-              <Paper
+              <Box
                 key={i}
                 sx={{
                   padding: "20px 0px",
@@ -66,7 +66,7 @@ const OurFeaturs = () => {
                 <Typography pt={1} variant="h6" textAlign="center">
                   {item.text}
                 </Typography>
-              </Paper>
+              </Box>
             );
           })}
         </Stack>

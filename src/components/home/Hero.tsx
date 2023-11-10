@@ -1,9 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import Header from "@/components/home/Header";
-import HeaderContainer from "@/container/HeaderContainer";
-import { Box, Typography, Stack, Button, Paper } from "@mui/material";
-
+import { Box, Typography, Stack, Paper } from "@mui/material";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import SpeedIcon from "@mui/icons-material/Speed";
@@ -14,14 +10,17 @@ const Hero = () => {
       <Box
         sx={{
           background: `url('/bagground.jpg')`,
-          // background: `url('https://lh3.googleusercontent.com/BoNssU4yW1fSjpblBYpAuB917yBmYolbBt6rAoS71E5nZ02XHhnUihBAU2TZolfrx8ijsez4r_8ohTucyt9OBaqy59WxuTvWGcPXCO3vHjzV6xgwBw=w1864-rj')`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
-          padding: "300px 0",
+          padding: "320px 0",
           position: "sticky",
           top: "0px",
           zIndex: "-999",
-          borderRadius: "0% 0% 68% 68% / 0% 0% 10% 10% ",
+          borderRadius: {
+            xs: "0% 0% 68% 68% / 0% 0% 5% 5% ",
+            sm: "0% 0% 68% 68% / 0% 0% 7% 7% ",
+            md: "0% 0% 68% 68% / 0% 0% 10% 10% ",
+          },
         }}
       ></Box>
 
@@ -125,30 +124,3 @@ const TextContent = () => {
     </Stack>
   );
 };
-// {[
-//   {
-//     icon: <SpeedIcon />,
-//     text: "Real-time learning with expert instructors.",
-//   },
-//   {
-//     icon: <StarBorderIcon />,
-//     text: "Rich, concise notes for every subject.",
-//   },
-//   {
-//     icon: <DirectionsRunIcon />,
-//     text: "Explore course to match your goals",
-//   },
-// ].map((item, i) => {
-//   return (
-//     <Stack
-//       key={i}
-//       alignItems="center"
-//       border="1px solid"
-//       direction="column"
-//       sx={{ height: "100%" }}
-//     >
-//       {item.icon}
-//       {/* <Typography variant="body2">{item.text}</Typography> */}
-//     </Stack>
-//   );
-// })}

@@ -25,6 +25,7 @@ const Course = () => {
             textAlign="center"
             color="secondary.main"
             fontWeight={600}
+            pb={3}
           >
             Courses
           </Typography>

@@ -102,7 +102,9 @@ const CourseInfo = () => {
           },
         }}
       >
-        <Button variant="contained">Enroll Today</Button>
+        <Button variant="contained" size="large">
+          Enroll Today
+        </Button>
       </Stack>
     </>
   );

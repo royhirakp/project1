@@ -1,17 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {
-  Avatar,
-  Box,
-  Button,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import React from "react";
+import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -29,7 +19,6 @@ const LoginButtonAndUserProfile = () => {
     <>
       <Box>
         <Stack direction="row" spacing={2}>
-          {/* <IconButton onClick={handleClick} sx={{ padding: 0 }}> */}
           <Button
             onClick={handleClick}
             sx={{
@@ -71,11 +60,7 @@ const LoginButtonAndUserProfile = () => {
               Hirak Roy
             </Typography>
           </Button>
-          {/* <Avatar
-              alt="Remy Sharp"
-              src="https://mui.com/static/images/avatar/2.jpg"
-            /> */}
-          {/* </IconButton> */}
+
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}

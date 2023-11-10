@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Box,
@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 type Anchor = "top" | "left" | "bottom" | "right";
@@ -26,10 +25,7 @@ import GradingIcon from "@mui/icons-material/Grading";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import HolidayVillageIcon from "@mui/icons-material/HolidayVillage";
 import BookIcon from "@mui/icons-material/Book";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
-import SettingsIcon from "@mui/icons-material/Settings";
 import MessageIcon from "@mui/icons-material/Message";
 
 const Draweerr = ({
@@ -39,12 +35,10 @@ const Draweerr = ({
   toggleDrawer: any;
   state: any;
 }) => {
-  const router = useRouter();
   const [activeList, setActiveState] = useState(0);
   const list = (anchor: Anchor) => (
     <Box
       sx={{
-        // width: anchor === "to  p" || anchor === "bottom" ? "auto" : 250,
         width: "100vw",
         display: "flex",
         flexDirection: "column",
@@ -57,220 +51,39 @@ const Draweerr = ({
     >
       <div>
         <Stack direction="row" justifyContent="space-between" pt={2} pb={2}>
-          <div
-            onClick={() => {
-              // router.push("/webapp");
-            }}
-            style={{
+          <Box
+            pl={2}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
               cursor: "pointer",
             }}
           >
-            <Box
-              pl={2}
-              // pb={2}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Image src="/logo3.png" alt="logo" width={40} height={40} />
-            </Box>
-          </div>
+            <Image src="/logo3.png" alt="logo" width={40} height={40} />
+          </Box>
           <IconButton>
             <CloseIcon />
           </IconButton>
         </Stack>
 
         <LoginPartForMobileDrawer />
-
         <Divider />
-
-        <List>
-          {[
-            {
-              name: "Home",
-              icon: <HomeIcon sx={{ color: "primary.main" }} />,
-              path: "home",
-            },
-            {
-              name: "About",
-              icon: <InfoIcon sx={{ color: "primary.main" }} />,
-              path: "about",
-            },
-            {
-              name: "Study Meterial",
-              icon: <GradingIcon sx={{ color: "primary.main" }} />,
-              path: "studyMeterial",
-            },
-            {
-              name: "Courses",
-              icon: <LocalTaxiIcon sx={{ color: "primary.main" }} />,
-              path: "courses",
-            },
-            {
-              name: "Contacts",
-              icon: <HolidayVillageIcon sx={{ color: "primary.main" }} />,
-              path: "contacts",
-            },
-            {
-              name: "Classroom",
-              icon: <BookIcon sx={{ color: "primary.main" }} />,
-              path: "classroom",
-            },
-            // "contact",
-          ].map((text, index) => (
-            <Link
-              href={`/newapp/${text?.path}`}
-              key={index}
-              style={{ textDecoration: "none" }}
-              onClick={() => {
-                setActiveState(index);
-              }}
-            >
-              <ListItem
-                disablePadding
-                sx={{
-                  backgroundColor: `${
-                    activeList == index ? "secondary.main" : "secondary.light"
-                  }`,
-                }}
-              >
-                <ListItemButton>
-                  <ListItemIcon sx={{ color: "#fffff" }}>
-                    {text?.icon}
-                  </ListItemIcon>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      // color: "secondary.main",
-                      color: `${
-                        activeList == index
-                          ? "secondary.light"
-                          : "secondary.main"
-                      }`,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {text?.name}
-                  </Typography>
-                </ListItemButton>
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-
+        <ListOfMenu setActiveState={setActiveState} activeList={activeList} />
         <Divider />
-        <Link
-          href={`/newapp/Settings`}
-          style={{ textDecoration: "none", backgroundColor: "red" }}
-          onClick={() => {
-            // setActiveState(index);
-          }}
-        >
-          <ListItem
-            disablePadding
-            sx={
-              {
-                // background: `${activeList == index ? "#ffff" : "#faffa"}`,
-              }
-            }
-          >
-            <ListItemButton>
-              <ListItemIcon>
-                <SettingsIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <Typography
-                variant="subtitle2"
-                sx={{
-                  // color: `${activeList == index ? "#3a3434" : "#3a3434"}`,
-                  fontWeight: 800,
-                }}
-              >
-                Settings
-              </Typography>
-            </ListItemButton>
-          </ListItem>
-        </Link>
-
-        <Divider />
-
-        <List>
-          {[
-            {
-              name: "help",
-              icon: <HelpCenterIcon sx={{ color: "primary.main" }} />,
-            },
-            {
-              name: "Feedback",
-              icon: <MessageIcon sx={{ color: "primary.main" }} />,
-            },
-
-            // "contact",
-          ].map((text, index) => (
-            <Link
-              href={`/newapp/${text?.name}`}
-              key={index}
-              style={{ textDecoration: "none", backgroundColor: "red" }}
-              onClick={() => {
-                setActiveState(index);
-              }}
-            >
-              <ListItem
-                disablePadding
-                sx={
-                  {
-                    // background: `${activeList == index ? "#ffff" : "#faffa"}`,
-                  }
-                }
-              >
-                <ListItemButton>
-                  <ListItemIcon>{text?.icon}</ListItemIcon>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: `${activeList == index ? "#3a3434" : "#3a3434"}`,
-                      fontWeight: 800,
-                    }}
-                  >
-                    {text?.name}
-                  </Typography>
-                </ListItemButton>
-              </ListItem>
-            </Link>
-          ))}
-        </List>
+        <HelpAndFeedBack
+          setActiveState={setActiveState}
+          activeList={activeList}
+        />
       </div>
+      {/* logout button */}
       <Stack
         sx={{
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
-
-          // display: localStorage.getItem("loginStatus") ? "flex" : "none",
         }}
       >
-        <Link
-          href={`/login`}
-          // style={i == activeButton ? activeStyle : inActiveStyle}
-          onClick={() => {
-            // setSActiveButton(i);
-            // localStorage.removeItem("loginStatus");
-          }}
-        >
-          <Button
-            sx={{
-              disableRipple: "true",
-              "&:hover": {
-                backgroundColor: "transparent",
-              },
-            }}
-          >
-            <LogoutIcon sx={{ color: "primary.main" }} />
-            <Typography variant="body1" sx={{ paddingLeft: "5px" }}>
-              Logout
-            </Typography>
-          </Button>
-        </Link>
+        <LogOutButton />
       </Stack>
     </Box>
   );
@@ -296,7 +109,6 @@ const Draweerr = ({
 export default Draweerr;
 
 const LoginPartForMobileDrawer = () => {
-  const router = useRouter();
   return (
     <Stack>
       {/* xmx */}
@@ -315,7 +127,7 @@ const LoginPartForMobileDrawer = () => {
             }
           }
         >
-          <ListItemButton>
+          <ListItemButton sx={{}}>
             <Link
               href={`/newapp/profile`}
               style={{ textDecoration: "none" }}
@@ -347,5 +159,168 @@ const LoginPartForMobileDrawer = () => {
       </Box>
       {/* sjsjjsjs */}
     </Stack>
+  );
+};
+
+const LogOutButton = () => {
+  return (
+    <Link
+      href={`/login`}
+      // style={i == activeButton ? activeStyle : inActiveStyle}
+      onClick={() => {
+        // setSActiveButton(i);
+        // localStorage.removeItem("loginStatus");
+      }}
+    >
+      <Button
+        sx={{
+          disableRipple: "true",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
+        <LogoutIcon sx={{ color: "primary.main" }} />
+        <Typography variant="body1" sx={{ paddingLeft: "5px" }}>
+          Logout
+        </Typography>
+      </Button>
+    </Link>
+  );
+};
+
+const HelpAndFeedBack = ({
+  setActiveState,
+  activeList,
+}: {
+  setActiveState: any;
+  activeList: any;
+}) => {
+  return (
+    <List>
+      {[
+        {
+          name: "help",
+          icon: <HelpCenterIcon sx={{ color: "primary.main" }} />,
+        },
+        {
+          name: "Feedback",
+          icon: <MessageIcon sx={{ color: "primary.main" }} />,
+        },
+
+        // "contact",
+      ].map((text, index) => (
+        <Link
+          href={`/newapp/${text?.name}`}
+          key={index}
+          style={{ textDecoration: "none", backgroundColor: "red" }}
+          onClick={() => {
+            setActiveState(index);
+          }}
+        >
+          <ListItem
+            disablePadding
+            sx={
+              {
+                // background: `${activeList == index ? "#ffff" : "#faffa"}`,
+              }
+            }
+          >
+            <ListItemButton>
+              <ListItemIcon>{text?.icon}</ListItemIcon>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: `${activeList == index ? "#3a3434" : "#3a3434"}`,
+                  fontWeight: 800,
+                }}
+              >
+                {text?.name}
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      ))}
+    </List>
+  );
+};
+
+const ListOfMenu = ({
+  setActiveState,
+  activeList,
+}: {
+  setActiveState: any;
+  activeList: any;
+}) => {
+  return (
+    <List>
+      {[
+        {
+          name: "Home",
+          icon: <HomeIcon sx={{ color: "primary.main" }} />,
+          path: "home",
+        },
+        {
+          name: "About",
+          icon: <InfoIcon sx={{ color: "primary.main" }} />,
+          path: "about",
+        },
+        {
+          name: "Study Meterial",
+          icon: <GradingIcon sx={{ color: "primary.main" }} />,
+          path: "studyMeterial",
+        },
+        {
+          name: "Courses",
+          icon: <LocalTaxiIcon sx={{ color: "primary.main" }} />,
+          path: "courses",
+        },
+        {
+          name: "Contacts",
+          icon: <HolidayVillageIcon sx={{ color: "primary.main" }} />,
+          path: "contacts",
+        },
+        {
+          name: "Classroom",
+          icon: <BookIcon sx={{ color: "primary.main" }} />,
+          path: "classroom",
+        },
+        // "contact",
+      ].map((text, index) => (
+        <Link
+          href={`/newapp/${text?.path}`}
+          key={index}
+          style={{ textDecoration: "none" }}
+          onClick={() => {
+            setActiveState(index);
+          }}
+        >
+          <ListItem
+            disablePadding
+            sx={{
+              backgroundColor: `${
+                activeList == index ? "secondary.main" : "secondary.light"
+              }`,
+            }}
+          >
+            <ListItemButton>
+              <ListItemIcon sx={{ color: "#fffff" }}>{text?.icon}</ListItemIcon>
+              <Typography
+                variant="body1"
+                sx={{
+                  // color: "secondary.main",
+                  color: `${
+                    activeList == index ? "secondary.light" : "secondary.main"
+                  }`,
+                  fontWeight: 600,
+                }}
+              >
+                {text?.name}
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      ))}
+    </List>
   );
 };

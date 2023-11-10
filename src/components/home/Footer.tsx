@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, Stack, Typography } from "@mui/material";
 import HeaderContainer from "@/container/HeaderContainer";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
