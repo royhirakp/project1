@@ -108,9 +108,8 @@ const LogoAndDetailsAndCourse = () => {
             },
           ].map((item, i) => {
             return (
-              <Link href="face" style={{ textDecoration: "none" }}>
+              <Link href="face" style={{ textDecoration: "none" }} key={i}>
                 <Box
-                  key={i}
                   sx={{
                     display: "flex",
                     padding: "10px",
