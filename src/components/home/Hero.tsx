@@ -9,6 +9,7 @@ const Hero = () => {
     <Stack sx={{ width: "100%" }}>
       <Box
         sx={{
+          border: "1px solid red",
           background: `url('/bagground.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
@@ -17,7 +18,7 @@ const Hero = () => {
           top: "0px",
           zIndex: "-999",
           borderRadius: {
-            xs: "0% 0% 68% 68% / 0% 0% 5% 5% ",
+            xs: "0% 0% 68% 68% / 0% 0% 5% 5%",
             sm: "0% 0% 68% 68% / 0% 0% 7% 7% ",
             md: "0% 0% 68% 68% / 0% 0% 10% 10% ",
           },

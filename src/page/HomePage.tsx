@@ -13,6 +13,7 @@ const HomePage = () => {
       </Box>
 
       <Course />
+
       <Box pt={9}>
         <OurFeaturs />
       </Box>

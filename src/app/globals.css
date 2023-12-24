@@ -1,7 +1,9 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities;
 
+.btn {
+  @apply bg-red-800 px-3 py-2 rounded-2xl mx-2 text-white hover:text-slate-950 hover:bg-fuchsia-200;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,17 +17,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@tailwind utilities;
 
 body {
-  color: rgb(var(--foreground-rgb));
+  margin: 0;
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-body {
-  margin: 0;
+    ) */
+  /* rgb(var(--background-start-rgb)); */
 }
